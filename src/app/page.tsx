@@ -138,7 +138,7 @@ export default function HomePage() {
 
       {/* ---------------- The two halves ---------------- */}
       <section aria-labelledby="work-title" className="py-20 sm:py-24">
-        <Container className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+        <Container className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-20">
           <Reveal>
             <h2 id="work-title" className="text-heading font-semibold text-balance">
               The day job keeps the ideas grounded. Building keeps me learning.
