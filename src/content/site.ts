@@ -32,10 +32,11 @@ export const site = {
    *   github:   "https://github.com/your-handle"
    *   email:    "you@example.com"
    */
-  links: {
-    linkedin: null as string | null,
-    github: "https://github.com/judemendez-dev" as string | null,
-    email: null as string | null,
+    links: {
+     linkedin: "https://www.linkedin.com/in/jude-mendez/" as string | null,
+     github: "https://github.com/judemendez-dev" as string | null,
+     email: "jude.mendez@outlook.com" as string | null,
+   },
   },
 
   /**
