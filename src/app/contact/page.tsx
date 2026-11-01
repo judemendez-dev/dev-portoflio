@@ -16,7 +16,7 @@ export const metadata = createMetadata({
 export default function ContactPage() {
   return (
     <Container>
-      <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+      <div className="grid gap-12 lg:min-h-[70vh] lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-20">
         <PageHeader
           title="Get in touch"
           lede="Questions about Intune, one of my projects, or something you're working on? Any of these will reach me."
@@ -26,7 +26,7 @@ export default function ContactPage() {
             {site.location}, where it&apos;s currently <LocalTime />
           </p>
         </PageHeader>
-        <div className="rise lg:pt-20" style={cssVars({ "--i": 2 })}>
+        <div className="rise pb-4 lg:py-14" style={cssVars({ "--i": 2 })}>
           <ContactLinks />
         </div>
       </div>
