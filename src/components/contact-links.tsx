@@ -47,11 +47,11 @@ export function ContactLinks({ compact = false }: { compact?: boolean }) {
         {configured.length > 0 && (
           <ul className="divide-y divide-line border-y border-line">
             {configured.map((item) => (
-              <li key={item.key} className="flex items-center gap-3 py-1">
+              <li key={item.key} className="flex flex-wrap items-center gap-x-3 py-1 sm:flex-nowrap">
                 <a
                   href={item.href!}
                   {...(item.key === "email" ? {} : { target: "_blank", rel: "noopener noreferrer" })}
-                  className="group -mx-2 flex min-w-0 flex-1 items-center gap-3 rounded-lg px-2 py-3 transition-colors hover:bg-raised"
+                  className="group -mx-2 flex min-w-0 flex-1 basis-full items-center gap-3 rounded-lg px-2 py-3 transition-colors hover:bg-raised sm:basis-auto"
                 >
                   <Icon name={item.icon} size={17} className="shrink-0 text-ink-faint transition-colors group-hover:text-accent" />
                   <span className="w-20 shrink-0 text-sm text-ink-faint">{item.label}</span>
@@ -63,7 +63,7 @@ export function ContactLinks({ compact = false }: { compact?: boolean }) {
                   />
                   {item.key !== "email" && <span className="sr-only"> (opens in a new tab)</span>}
                 </a>
-                {item.key === "email" && email && <CopyEmail email={email} className="shrink-0" />}
+                {item.key === "email" && email && <CopyEmail email={email} className="mb-3 ml-[29px] shrink-0 sm:mb-0 sm:ml-0" />}
               </li>
             ))}
           </ul>
@@ -83,15 +83,15 @@ export function ContactLinks({ compact = false }: { compact?: boolean }) {
       {configured.length > 0 && (
         <ul className="divide-y divide-line overflow-hidden rounded-[20px] border border-line bg-surface">
           {configured.map((item) => (
-            <li key={item.key} className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:gap-5 sm:p-6">
+            <li key={item.key} className="flex gap-4 p-5 sm:gap-5 sm:p-6">
               <span className="grid size-11 shrink-0 place-items-center rounded-xl border border-line bg-canvas text-ink-muted">
                 <Icon name={item.icon} size={18} />
               </span>
+              {/* Text on top, buttons underneath, so a long address never squeezes the description. */}
               <div className="min-w-0 flex-1">
                 <p className="font-medium">{item.label}</p>
                 <p className="text-sm text-ink-muted">{item.note}</p>
-              </div>
-              <div className="flex flex-wrap items-center gap-2">
+                <div className="mt-4 flex flex-wrap items-center gap-2">
                 <a
                   href={item.href!}
                   {...(item.key === "email" ? {} : { target: "_blank", rel: "noopener noreferrer" })}
@@ -101,7 +101,8 @@ export function ContactLinks({ compact = false }: { compact?: boolean }) {
                   <Icon name="arrow-up-right" size={14} className="shrink-0 transition-transform group-hover:-translate-y-px group-hover:translate-x-0.5" />
                   {item.key !== "email" && <span className="sr-only"> (opens in a new tab)</span>}
                 </a>
-                {item.key === "email" && email && <CopyEmail email={email} />}
+                  {item.key === "email" && email && <CopyEmail email={email} />}
+                </div>
               </div>
             </li>
           ))}
