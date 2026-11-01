@@ -87,7 +87,7 @@ const allProjects: Project[] = [
     categoryLabel: "Navigation / Web Application",
     categories: ["web-apps"],
     // TODO (your input): confirm the status. "Live", "In Development" or "Archived".
-    status: "In Development",
+    status: "Active",
     // TODO (your input): add the technologies Routely is built with.
     stack: [],
     featured: true,
@@ -145,7 +145,7 @@ const allProjects: Project[] = [
     categoryLabel: "Productivity / Web Application",
     categories: ["web-apps"],
     // TODO (your input): confirm the status.
-    status: "In Development",
+    status: "Active",
     stack: ["Next.js", "Supabase", "Tailwind CSS"],
     featured: true,
     hue: 32,
