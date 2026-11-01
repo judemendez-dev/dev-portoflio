@@ -3,10 +3,7 @@
  *  SITE SETTINGS — your name, links and contact details.
  * ============================================================
  *
- *  Anything set to `null` is a placeholder that needs your input.
- *  While it's null, the site simply hides that link in production,
- *  and shows a dashed "needs your input" note when you run it locally
- *  (`npm run dev`), so you can see what's still missing.
+ *  Links left as "" (empty quotes) are hidden on the site.
  */
 
 export const site = {
@@ -26,24 +23,17 @@ export const site = {
   employer: "Deloitte",
 
   /**
-   * TODO (your input): add your contact details.
-   * Use full URLs for LinkedIn and GitHub, e.g.
-   *   linkedin: "https://www.linkedin.com/in/your-handle"
-   *   github:   "https://github.com/your-handle"
-   *   email:    "you@example.com"
+   * Your contact details. Type them between the quotes only.
+   *   linkedin: full profile URL, e.g. "https://www.linkedin.com/in/your-handle"
+   *   email:    just the address, e.g. "you@example.com"
    */
-    links: {
-     linkedin: "https://www.linkedin.com/in/jude-mendez/" as string | null,
-     github: "https://github.com/judemendez-dev" as string | null,
-     email: "jude.mendez@outlook.com" as string | null,
-   },
+  links: {
+    linkedin: "" as string | null, // ← your LinkedIn URL goes between the quotes
+    github: "https://github.com/judemendez-dev" as string | null,
+    email: "" as string | null, // ← your email address goes between the quotes
   },
 
-  /**
-   * TODO (your input): profile photo for the About page.
-   * Put a square image in /public (e.g. /public/jude.jpg) and set:
-   *   photo: { src: "/jude.jpg", alt: "Jude Mendez" }
-   */
+  /** Profile photo for the About page (file lives in /public). */
   photo: {
     src: "/jude-mendez.jpg",
     alt: "Black-and-white portrait of Jude Mendez in a suit and bow tie, looking to the right in front of a brick wall",
