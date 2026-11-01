@@ -34,7 +34,7 @@ export const site = {
    */
   links: {
     linkedin: null as string | null,
-    github: null as string | null,
+    github: "https://github.com/judemendez-dev" as string | null,
     email: null as string | null,
   },
 
@@ -43,7 +43,10 @@ export const site = {
    * Put a square image in /public (e.g. /public/jude.jpg) and set:
    *   photo: { src: "/jude.jpg", alt: "Jude Mendez" }
    */
-  photo: null as { src: string; alt: string } | null,
+  photo: {
+    src: "/jude-mendez.jpg",
+    alt: "Black-and-white portrait of Jude Mendez in a suit and bow tie, looking to the right in front of a brick wall",
+  } as { src: string; alt: string } | null,
 } as const;
 
 export type SocialKey = keyof typeof site.links;

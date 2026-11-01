@@ -5,8 +5,11 @@ import { isDev, site } from "@/content/site";
 
 type Item = { key: "email" | "linkedin" | "github"; label: string; icon: IconName; href: string | null; display: string | null; note: string };
 
-/** Contact options built from the links in src/content/site.ts. Unset links are hidden in production. */
-export function ContactLinks() {
+/**
+ * Contact options built from the links in src/content/site.ts. Unset links are hidden in production.
+ * `compact` is a quieter single list used on the About page; the Contact page uses the default.
+ */
+export function ContactLinks({ compact = false }: { compact?: boolean }) {
   const { email, linkedin, github } = site.links;
   const items: Item[] = [
     {
@@ -37,6 +40,43 @@ export function ContactLinks() {
 
   const configured = items.filter((i) => i.href);
   const missing = items.filter((i) => !i.href);
+
+  if (compact) {
+    return (
+      <div className="space-y-4">
+        {configured.length > 0 && (
+          <ul className="divide-y divide-line border-y border-line">
+            {configured.map((item) => (
+              <li key={item.key} className="flex items-center gap-3 py-1">
+                <a
+                  href={item.href!}
+                  {...(item.key === "email" ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                  className="group -mx-2 flex min-w-0 flex-1 items-center gap-3 rounded-lg px-2 py-3 transition-colors hover:bg-raised"
+                >
+                  <Icon name={item.icon} size={17} className="shrink-0 text-ink-faint transition-colors group-hover:text-accent" />
+                  <span className="w-20 shrink-0 text-sm text-ink-faint">{item.label}</span>
+                  <span className="min-w-0 truncate text-[15px] text-ink">{item.display}</span>
+                  <Icon
+                    name="arrow-up-right"
+                    size={14}
+                    className="ml-auto shrink-0 text-ink-faint transition-transform group-hover:-translate-y-px group-hover:translate-x-0.5"
+                  />
+                  {item.key !== "email" && <span className="sr-only"> (opens in a new tab)</span>}
+                </a>
+                {item.key === "email" && email && <CopyEmail email={email} className="shrink-0" />}
+              </li>
+            ))}
+          </ul>
+        )}
+        {missing.length > 0 && (
+          <NeedsInput file="src/content/site.ts">
+            Add your {missing.map((m) => m.label).join(", ")} under <code className="font-mono text-[12.5px]">links</code> to show{" "}
+            {missing.length === 1 ? "it" : "them"} here.
+          </NeedsInput>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-4">

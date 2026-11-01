@@ -44,7 +44,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-5 sm:px-8">
         <Link href="/" className="group flex items-center gap-2.5 rounded-lg" aria-label={`${site.name}, home`}>
           <Monogram className="transition-transform duration-500 ease-[var(--ease-out-soft)] group-hover:-rotate-6" />
-          <span className="text-[15px] font-semibold tracking-tight">{site.name}</span>
+          <span className="whitespace-nowrap text-[15px] font-semibold tracking-tight">{site.name}</span>
         </Link>
 
         <DesktopNav pathname={pathname} />
@@ -57,8 +57,8 @@ export function SiteHeader() {
             aria-label="Open command menu"
           >
             <Icon name="search" size={14} />
-            <span>Search</span>
-            <kbd className="rounded-full bg-raised px-2 py-0.5 font-mono text-[11px] text-ink-faint">
+            <span className="md:max-lg:sr-only">Search</span>
+            <kbd className="whitespace-nowrap rounded-full bg-raised px-2 py-0.5 font-mono text-[11px] text-ink-faint">
               {isMac ? "⌘K" : "Ctrl K"}
             </kbd>
           </button>

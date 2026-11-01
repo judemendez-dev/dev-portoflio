@@ -3,10 +3,12 @@ import { Icon, type IconName } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { Monogram } from "@/components/monogram";
 import { Reveal } from "@/components/reveal";
+import { ContactLinks } from "@/components/contact-links";
 import { ButtonLink, Container, NeedsInput } from "@/components/ui";
+import { experience } from "@/content/experience";
 import { site } from "@/content/site";
 import { createMetadata, personJsonLd, socialImages } from "@/lib/seo";
-import { cssVars } from "@/lib/cn";
+import { cn, cssVars } from "@/lib/cn";
 
 export const metadata = createMetadata({
   title: "About",
@@ -40,12 +42,22 @@ const techInterests: { icon: IconName; title: string; body: string }[] = [
 ];
 
 
+/** Career progression for the side of the story section, oldest first, built from src/content/experience.ts. */
+const careerSteps = [...experience].reverse().flatMap((company) =>
+  [...company.roles].reverse().map((role) => ({
+    year: role.start.slice(-4),
+    title: role.title,
+    company: company.company,
+    current: Boolean(role.current),
+  })),
+);
+
 export default function AboutPage() {
   return (
     <Container>
       <JsonLd data={{ "@context": "https://schema.org", "@type": "ProfilePage", mainEntity: personJsonLd() }} />
 
-      <div className="grid gap-12 pb-8 pt-14 sm:pt-20 lg:grid-cols-[1fr_340px] lg:gap-20">
+      <div className="grid gap-10 pb-2 pt-14 sm:pt-20 lg:grid-cols-[1fr_340px] lg:gap-20 lg:pb-8">
         <header>
           <h1 className="rise text-title font-semibold text-balance">
             Working with technology. Building what&apos;s missing.
@@ -65,18 +77,20 @@ export default function AboutPage() {
           </div>
         </header>
 
-        <Reveal delay={2} className="lg:pt-2">
-          <figure className="relative">
+        <Reveal delay={2} className="w-full max-w-[300px] lg:max-w-none lg:pt-2">
+          <figure>
             {site.photo ? (
-              <Image
-                src={site.photo.src}
-                alt={site.photo.alt}
-                width={680}
-                height={680}
-                priority
-                sizes="(min-width: 1024px) 340px, 100vw"
-                className="aspect-square w-full rounded-[24px] border border-line object-cover"
-              />
+              <div className="relative overflow-hidden rounded-[22px] border border-line-strong bg-surface p-1.5 shadow-[var(--shadow-lift)]">
+                <Image
+                  src={site.photo.src}
+                  alt={site.photo.alt}
+                  width={400}
+                  height={400}
+                  priority
+                  sizes="(min-width: 1024px) 340px, 300px"
+                  className="aspect-square w-full rounded-[16px] object-cover"
+                />
+              </div>
             ) : (
               <div className="relative grid aspect-square w-full place-items-center overflow-hidden rounded-[24px] border border-line bg-surface">
                 <div aria-hidden="true" className="dot-grid absolute inset-0" />
@@ -102,12 +116,40 @@ export default function AboutPage() {
       </div>
 
       {/* Story */}
-      <section aria-labelledby="story" className="mt-16 grid gap-10 border-t border-line pt-16 lg:grid-cols-[280px_1fr] lg:gap-20">
-        <Reveal>
-          <h2 id="story" className="text-heading font-semibold">
-            From an opportunity to a career
-          </h2>
-        </Reveal>
+      <section aria-labelledby="story" className="mt-12 grid gap-10 border-t border-line pt-12 lg:mt-16 lg:grid-cols-[280px_1fr] lg:gap-20 lg:pt-16">
+        <div className="lg:sticky lg:top-24 lg:self-start">
+          <Reveal>
+            <h2 id="story" className="text-heading font-semibold">
+              From an opportunity to a career
+            </h2>
+          </Reveal>
+          <Reveal delay={1}>
+            <ol aria-label="Career progression" className="relative mt-8 space-y-6">
+              <span
+                aria-hidden="true"
+                className="absolute bottom-3 left-[5px] top-3 w-px bg-gradient-to-b from-line-strong via-line-strong to-accent/70"
+              />
+              {careerSteps.map((step, i) => (
+                <li key={`${step.company}-${step.title}`} className="relative pl-7">
+                  <span
+                    aria-hidden="true"
+                    className={cn(
+                      "absolute left-0 top-[4px] size-[11px] rounded-full border-2 bg-canvas",
+                      step.current ? "border-accent" : "border-line-strong",
+                    )}
+                  />
+                  <p className="text-xs text-ink-faint">
+                    <span className="tabular-nums">{step.year}</span>
+                    {i === 0 && <span className="ml-2 text-accent">Started at 18</span>}
+                    {step.current && <span className="ml-2 text-accent">Today</span>}
+                  </p>
+                  <p className="mt-1 text-sm font-medium leading-snug text-ink">{step.title}</p>
+                  <p className="text-sm text-ink-faint">{step.company}</p>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+        </div>
         <Reveal delay={1} className="prose-body max-w-[64ch] text-[17px] leading-[1.75] text-ink-muted">
           <p>
             My journey into IT began at just 18 years old, fresh out of high school, when I was given an opportunity to start as
@@ -158,7 +200,7 @@ export default function AboutPage() {
 
       {/* Approach */}
       <section className="mt-24 grid gap-10 border-t border-line pt-16 lg:grid-cols-[280px_1fr] lg:gap-20">
-        <Reveal>
+        <Reveal className="lg:sticky lg:top-24 lg:self-start">
           <h2 id="approach" className="text-heading font-semibold">
             How I learn and build
           </h2>
@@ -192,6 +234,24 @@ export default function AboutPage() {
           View my experience
         </ButtonLink>
       </Reveal>
+
+      {/* Contact */}
+      <section aria-labelledby="connect" className="mt-24 grid gap-10 border-t border-line pt-16 lg:grid-cols-[280px_1fr] lg:gap-20">
+        <Reveal className="lg:sticky lg:top-24 lg:self-start">
+          <h2 id="connect" className="text-heading font-semibold">
+            Let&apos;s connect
+          </h2>
+        </Reveal>
+        <Reveal delay={1} className="max-w-[64ch]">
+          <p className="text-[17px] leading-[1.75] text-ink-muted">
+            I&apos;m always interested in connecting with people working in technology, sharing ideas and discussing
+            interesting projects. Feel free to reach out.
+          </p>
+          <div className="mt-8">
+            <ContactLinks compact />
+          </div>
+        </Reveal>
+      </section>
     </Container>
   );
 }
