@@ -28,9 +28,9 @@ export const site = {
    *   email:    just the address, e.g. "you@example.com"
    */
   links: {
-    linkedin: "" as string | null, // ← your LinkedIn URL goes between the quotes
+    linkedin: "https://www.linkedin.com/in/jude-mendez/" as string | null, // ← your LinkedIn URL goes between the quotes
     github: "https://github.com/judemendez-dev" as string | null,
-    email: "" as string | null, // ← your email address goes between the quotes
+    email: "jude.mendez@outlook.com" as string | null, // ← your email address goes between the quotes
   },
 
   /** Profile photo for the About page (file lives in /public). */
