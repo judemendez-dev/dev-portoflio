@@ -11,7 +11,7 @@ export const metadata = createMetadata({
   path: "/experience",
   image: socialImages.experience,
   description:
-    "Jude Mendez's career in enterprise IT: Intune Administrator at Deloitte, and previously Systems Engineer at The Star Entertainment Group. Endpoint management, identity and security.",
+    "Jude Mendez's career in enterprise IT: Microsoft Intune Administrator - Asia Pacific at Deloitte, and previously End User Technologies Engineer at The Star Entertainment Group. Endpoint management, identity and security.",
 });
 
 export default function ExperiencePage() {
@@ -34,7 +34,7 @@ export default function ExperiencePage() {
 
       <PageHeader
         title="Experience"
-        lede="Five-plus years in enterprise IT, working mostly with Microsoft's endpoint, identity and security stack."
+        lede="Over five years of experience in enterprise IT, specialising in modern workplace technologies, endpoint management and security. My work spans large-scale deployments, infrastructure modernisation and the management of Microsoft technologies across complex enterprise environments."
       />
 
       {/* ---------------- Timeline ---------------- */}
@@ -105,7 +105,8 @@ export default function ExperiencePage() {
             Technical skills
           </h2>
           <p className="mt-3 max-w-xl text-ink-muted">
-            The tools and areas I work with, grouped the way they show up in practice.
+            Technologies and platforms I&apos;ve worked with across enterprise IT, endpoint management, security and
+            independent development.
           </p>
         </Reveal>
 

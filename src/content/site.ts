@@ -22,7 +22,7 @@ export const site = {
   description:
     "Jude Mendez is a Sydney-based IT professional specialising in enterprise endpoint management and security, who builds apps and experiments with AI-assisted development outside the day job.",
 
-  role: "Intune Administrator",
+  role: "Microsoft Intune Administrator - Asia Pacific",
   employer: "Deloitte",
 
   /**

@@ -41,14 +41,15 @@ export default function HomePage() {
             </h1>
 
             <p className="rise mt-5 text-tagline font-medium text-ink-muted" style={{ "--i": 2 } as CSSProperties}>
-              IT professional by day.
+              Working in IT.
               <br />
-              Building things by curiosity.
+              Building beyond it.
             </p>
 
             <p className="rise mt-6 max-w-[34rem] text-lede text-ink-muted text-pretty" style={{ "--i": 3 } as CSSProperties}>
-              I&apos;m a Sydney-based IT professional specialising in enterprise endpoint management and security. Outside the day
-              job, I build apps, experiment with AI, and turn ideas into working products.
+              I specialise in modern enterprise IT, with a focus on Microsoft Intune, Entra ID and endpoint security. Based in
+              Sydney, I work with technologies that help organisations manage and secure their devices at scale. Outside of
+              that, I build my own applications, explore AI and experiment with new ideas.
             </p>
 
             <div className="rise mt-9 flex flex-wrap gap-3" style={{ "--i": 4 } as CSSProperties}>
@@ -143,9 +144,10 @@ export default function HomePage() {
               The day job keeps the ideas grounded. Building keeps me learning.
             </h2>
             <p className="mt-5 max-w-lg leading-relaxed text-ink-muted text-pretty">
-              My work is managing Microsoft technologies across a large enterprise: devices, identity, security and the policies
-              that tie them together. A lot of what I build on the side starts there, with a slow workflow or a question that
-              takes too many clicks to answer.
+              Working in enterprise IT has given me firsthand experience with the frustrations and inefficiencies that IT
+              professionals face every day. Even the most established technologies have their limitations, and sometimes the
+              simplest tasks are harder than they need to be. I enjoy identifying those gaps and building practical tools that
+              simplify workflows, solve real problems and make life easier for the people using them.
             </p>
             <ButtonLink href="/experience" variant="secondary" icon="arrow-right" className="mt-8">
               My experience
@@ -177,7 +179,7 @@ export default function HomePage() {
                 ))}
               </ul>
               <p className="mt-8 border-t border-line pt-5 text-sm text-ink-muted">
-                Before that: {experience[1].roles.length} roles at {experience[1].company}, from trainee to systems engineer.
+                Before that: {experience[1].roles.length} roles at {experience[1].company}, from trainee to End User Technologies Engineer.
               </p>
             </Link>
           </Reveal>

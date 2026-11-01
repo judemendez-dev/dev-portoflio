@@ -14,7 +14,7 @@ export type SocialImage = { url: string; width: number; height: number; alt: str
 
 /** Ready-made 1200×630 share cards in /public/og (regenerate them if you change page titles). */
 export const socialImages = {
-  home: { url: "/og/home.png", width: 1200, height: 630, alt: "Jude Mendez — IT professional by day, building things by curiosity" },
+  home: { url: "/og/home.png", width: 1200, height: 630, alt: "Jude Mendez — Working in IT. Building beyond it." },
   projects: { url: "/og/projects.png", width: 1200, height: 630, alt: "Projects by Jude Mendez" },
   about: { url: "/og/about.png", width: 1200, height: 630, alt: "About Jude Mendez" },
   experience: { url: "/og/experience.png", width: 1200, height: 630, alt: "Jude Mendez's professional experience" },

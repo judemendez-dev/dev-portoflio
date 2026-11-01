@@ -29,12 +29,12 @@ export const experience: Company[] = [
     location: "Sydney",
     roles: [
       {
-        title: "Intune Administrator",
+        title: "Microsoft Intune Administrator - Asia Pacific",
         start: "Mar 2025",
         end: "Present",
         current: true,
         summary:
-          "Supporting enterprise endpoint management and security across the Asia-Pacific region, with experience contributing to global Microsoft Defender initiatives.",
+          "Responsible for managing Microsoft Intune and endpoint security across a global enterprise environment, with a primary focus on the Asia-Pacific region. My work includes implementing role-based access controls at a global scale, collaborating with security teams to develop and deploy endpoint security policies, and conducting proof-of-concept testing to evaluate new technologies. I've also led the implementation and rollout of Microsoft Intune Remote Help to member firms worldwide, helping improve remote support capabilities across the organisation.",
         focus: [
           "Microsoft Intune administration",
           "Endpoint security and Microsoft Defender",
@@ -49,12 +49,12 @@ export const experience: Company[] = [
     location: "Sydney",
     roles: [
       {
-        title: "Systems Engineer",
+        title: "End User Technologies Engineer",
         // TODO (your input): add the start month if you'd like, e.g. "Jul 2022".
         start: "2022",
         end: "Feb 2025",
         summary:
-          "Worked across enterprise device management, Windows Autopilot, Microsoft Intune and infrastructure, contributing to large-scale endpoint projects including migrations involving thousands of devices.",
+          "Served as the Subject Matter Expert (SME) for Mobile Device Management, leading the migration of over 10,000 devices from a legacy MDM platform to Microsoft Intune across Sydney, Brisbane and the Gold Coast. Played a key role in modernising enterprise endpoint infrastructure through SCCM and Intune integration, Windows Autopilot deployments and device management improvements. Provided technical leadership to field services teams across all three properties, delivering scalable solutions that improved endpoint provisioning, management and security.",
         focus: [
           "Enterprise device management",
           "Windows Autopilot",
@@ -64,7 +64,7 @@ export const experience: Company[] = [
         ],
       },
       {
-        title: "Trainee Systems Engineer",
+        title: "End User Technologies Trainee",
         start: "Mar 2021",
         end: "Jun 2022",
         summary:
@@ -80,36 +80,55 @@ export type SkillGroup = { name: string; blurb: string; skills: string[] };
 export const skillGroups: SkillGroup[] = [
   {
     name: "Endpoint Management",
-    blurb: "Getting devices enrolled, configured and kept healthy at scale.",
+    blurb: "Deploying, configuring and managing enterprise devices at scale.",
     skills: [
       "Microsoft Intune",
-      "SCCM / MECM",
+      "Microsoft Configuration Manager (SCCM / MECM)",
       "Windows Autopilot",
       "Mobile Device Management (MDM)",
       "Mobile Application Management (MAM)",
+      "Apple Business Manager",
+      "Android Enterprise",
+      "Endpoint Configuration & Compliance",
     ],
   },
   {
     name: "Identity & Security",
-    blurb: "Making sure the right people reach the right things from healthy devices.",
-    skills: ["Microsoft Entra ID", "Conditional Access", "Device compliance", "Microsoft Defender"],
+    blurb: "Managing identity, access and endpoint protection across enterprise environments.",
+    skills: [
+      "Microsoft Entra ID",
+      "Microsoft Defender for Endpoint",
+      "Conditional Access",
+      "Role-Based Access Control (RBAC)",
+      "Identity & Access Management (IAM)",
+      "Endpoint Security Policies",
+      "Device Compliance",
+    ],
   },
   {
     name: "Infrastructure & Automation",
-    blurb: "Less clicking, more repeatable work.",
-    // TODO (your input): add scripting languages or tools you use day to day.
-    skills: ["Microsoft Graph", "Graph-based automation", "Enterprise infrastructure", "IT operations"],
+    blurb: "Supporting enterprise infrastructure, system integration and operational efficiency.",
+    skills: [
+      "Microsoft Graph API",
+      "Active Directory",
+      "Group Policy",
+      "PowerShell",
+      "Public Key Infrastructure (PKI)",
+      "Certificate Management",
+      "Enterprise IT Operations",
+    ],
   },
   {
     name: "Development & Tools",
-    blurb: "What I reach for when I'm building something of my own.",
+    blurb: "Exploring modern development technologies to build practical applications and solutions.",
     skills: [
       "Next.js",
+      "React",
       "TypeScript",
       "Tailwind CSS",
       "Supabase",
-      "Browser extensions",
-      "AI-assisted development",
+      "Browser Extension Development",
+      "AI-Assisted Development",
     ],
   },
 ];

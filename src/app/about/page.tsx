@@ -19,23 +19,23 @@ export const metadata = createMetadata({
 const techInterests: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "laptop",
-    title: "How systems fit together",
-    body: "Devices, identity, policies, networks. I like understanding the whole chain, not just the bit in front of me.",
+    title: "Understanding complex systems",
+    body: "I've always been interested in how different technologies work together. From infrastructure and networking to endpoint management, identity and security, I enjoy understanding the bigger picture and how each component contributes to a functioning enterprise environment.",
   },
   {
     icon: "code",
-    title: "Building software",
-    body: "Web apps, browser extensions and small tools that make something slightly less annoying.",
+    title: "Building practical solutions",
+    body: "I enjoy taking ideas and turning them into functional applications, whether that's a web platform, browser extension or a tool that addresses a real-world problem. I'm particularly interested in creating solutions that improve existing technologies and make everyday tasks easier.",
   },
   {
     icon: "flask",
-    title: "AI-assisted development",
-    body: "Using AI as a collaborator to get from idea to working product faster, and learning a lot along the way.",
+    title: "Exploring AI-assisted development",
+    body: "AI has opened up opportunities to explore software development in ways that weren't previously accessible to me. I enjoy experimenting with emerging AI technologies, learning through the development process and using these tools to bring ideas to life.",
   },
   {
     icon: "shield",
-    title: "Automation",
-    body: "If I've done it three times by hand, I start wondering how to never do it again.",
+    title: "Automation & efficiency",
+    body: "I naturally look for ways to simplify repetitive processes and improve how things are done. Whether through automation, better workflows or purpose-built tools, I'm interested in making technology more efficient, intuitive and accessible.",
   },
 ];
 
@@ -48,16 +48,19 @@ export default function AboutPage() {
       <div className="grid gap-12 pb-8 pt-14 sm:pt-20 lg:grid-cols-[1fr_340px] lg:gap-20">
         <header>
           <h1 className="rise text-title font-semibold text-balance">
-            I work in enterprise IT. I build things because I can&apos;t help it.
+            Working with technology. Building what&apos;s missing.
           </h1>
           <div className="rise prose-body mt-8 max-w-[62ch] text-lede text-ink-muted" style={cssVars({ "--i": 1 })}>
             <p>
-              Hi, I&apos;m Jude. I&apos;m based in Sydney and work as an Intune Administrator at Deloitte, looking after endpoint
-              management and security across the Asia-Pacific region.
+              Hi, I&apos;m Jude. I&apos;m a Sydney-based IT professional specialising in modern endpoint management, identity and
+              security. I currently work at Deloitte, managing Microsoft Intune and endpoint security across a global enterprise
+              environment, with a primary focus on the Asia-Pacific region.
             </p>
             <p>
-              I&apos;ve always been interested in how technology works, and what you can make once you understand it. That
-              curiosity is what got me into IT, and it&apos;s the same thing that has me opening a code editor after work.
+              My interest in technology has always extended beyond my professional work. I enjoy understanding how things work,
+              identifying where they could be better and exploring what&apos;s possible with new technologies. Whether it&apos;s
+              solving challenges in enterprise IT or developing my own applications, I&apos;m driven by the opportunity to turn
+              ideas into practical solutions.
             </p>
           </div>
         </header>
@@ -102,24 +105,35 @@ export default function AboutPage() {
       <section aria-labelledby="story" className="mt-16 grid gap-10 border-t border-line pt-16 lg:grid-cols-[280px_1fr] lg:gap-20">
         <Reveal>
           <h2 id="story" className="text-heading font-semibold">
-            Two sides, one habit
+            From an opportunity to a career
           </h2>
         </Reveal>
         <Reveal delay={1} className="prose-body max-w-[64ch] text-[17px] leading-[1.75] text-ink-muted">
           <p>
-            My career started in enterprise IT as a trainee systems engineer at The Star Entertainment Group, supporting end-user
-            technology and infrastructure. Over four years there I moved into device management, Windows Autopilot and Intune,
-            and worked on endpoint projects big enough that &ldquo;a few devices&rdquo; meant thousands.
+            My journey into IT began at just 18 years old, fresh out of high school, when I was given an opportunity to start as
+            an End User Technologies Trainee at The Star Entertainment Group. I knew it was an opportunity worth taking, and I
+            was determined to make the most of it. What started as an entry-level position quickly became a career I was
+            passionate about.
           </p>
           <p>
-            Today I do that work at Deloitte. It&apos;s a job about getting the details right at scale: the right policy, on the
-            right device, for the right people, without getting in anyone&apos;s way.
+            Over the next four years, I progressed into an End User Technologies Engineer, developing my expertise in enterprise
+            IT, endpoint management and modern workplace technologies. I took on increasingly complex responsibilities, from
+            managing enterprise infrastructure to leading large-scale device migrations and modernisation projects across
+            multiple properties.
           </p>
           <p>
-            The building side grew out of the same curiosity. AI-assisted development has made it possible for someone coming
-            from IT operations, rather than software engineering, to take an idea all the way to a working product. I&apos;m
-            not presenting myself as a full-time software engineer. I&apos;m someone who likes to understand things by making
-            them.
+            Today, at 24, I work at Deloitte, managing Microsoft Intune and endpoint security within a global enterprise
+            environment. Looking back, it&apos;s rewarding to see how much I&apos;ve grown from that 18-year-old just starting
+            out, and how much there still is to learn.
+          </p>
+          <p>
+            That same drive to learn has also led me beyond my professional career. With AI-assisted development opening up new
+            possibilities, I&apos;ve started building my own applications, exploring ideas and creating practical solutions to
+            real-world problems.
+          </p>
+          <p>
+            For me, technology has never been just about the work I do, but about continuously learning, improving and seeing
+            what I can build next.
           </p>
         </Reveal>
       </section>
@@ -128,7 +142,7 @@ export default function AboutPage() {
       <section aria-labelledby="tech" className="mt-24">
         <Reveal>
           <h2 id="tech" className="text-heading font-semibold">
-            What I&apos;m into, technically
+            What drives my interest in technology
           </h2>
         </Reveal>
         <ul className="mt-10 grid gap-px overflow-hidden rounded-[24px] border border-line bg-line sm:grid-cols-2">
