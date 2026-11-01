@@ -116,7 +116,7 @@ export default function AboutPage() {
       </div>
 
       {/* Story */}
-      <section aria-labelledby="story" className="mt-12 grid gap-10 border-t border-line pt-12 lg:mt-16 lg:grid-cols-[280px_1fr] lg:gap-20 lg:pt-16">
+      <section aria-labelledby="story" className="mt-12 grid grid-cols-1 gap-10 border-t border-line pt-12 lg:mt-16 lg:grid-cols-[280px_1fr] lg:gap-20 lg:pt-16">
         <div className="lg:sticky lg:top-24 lg:self-start">
           <Reveal>
             <h2 id="story" className="text-heading font-semibold">
@@ -199,14 +199,14 @@ export default function AboutPage() {
       </section>
 
       {/* Approach */}
-      <section className="mt-24 grid gap-10 border-t border-line pt-16 lg:grid-cols-[280px_1fr] lg:gap-20">
-        <Reveal className="lg:sticky lg:top-24 lg:self-start">
+      <section aria-labelledby="approach" className="mt-24 border-t border-line pt-16">
+        <Reveal>
           <h2 id="approach" className="text-heading font-semibold">
             How I learn and build
           </h2>
         </Reveal>
-        <Reveal as="div" delay={1}>
-          <ol className="grid gap-x-12 gap-y-8 sm:grid-cols-2">
+        <Reveal as="div" delay={1} className="mt-10">
+          <ol className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               ["Start with a real problem", "The best projects begin with something that annoyed me at work or at home."],
               ["Build the smallest working version", "Get something on screen early, then let it tell me what's missing."],
@@ -236,7 +236,7 @@ export default function AboutPage() {
       </Reveal>
 
       {/* Contact */}
-      <section aria-labelledby="connect" className="mt-24 grid gap-10 border-t border-line pt-16 lg:grid-cols-[280px_1fr] lg:gap-20">
+      <section aria-labelledby="connect" className="mt-24 grid grid-cols-1 gap-10 border-t border-line pt-16 lg:grid-cols-[280px_1fr] lg:gap-20">
         <Reveal className="lg:sticky lg:top-24 lg:self-start">
           <h2 id="connect" className="text-heading font-semibold">
             Let&apos;s connect
