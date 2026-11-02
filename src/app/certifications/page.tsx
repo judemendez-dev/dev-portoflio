@@ -51,7 +51,7 @@ export default function CertificationsPage() {
       <CredentialGallery credentials={credentials} />
 
       <p className="mt-12 max-w-xl text-sm leading-relaxed text-ink-faint">
-        Each credential links to its original record on Credly, Microsoft Learn or Skilljar, so it can be checked
+        Online credentials link to their original record on Credly, Microsoft Learn or Skilljar, so they can be checked
         independently.
       </p>
     </Container>

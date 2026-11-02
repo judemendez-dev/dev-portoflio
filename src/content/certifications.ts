@@ -4,8 +4,9 @@
  *  remove or reorder credentials on /certifications.
  * ============================================================
  *
- *  Every value below was checked against the credential's own
- *  verification page (Credly, Skilljar, Microsoft Learn) on 2 Nov 2026.
+ *  Online credentials were checked against their own verification page
+ *  (Credly, Skilljar, Microsoft Learn) on 2 Nov 2026. The TAFE NSW and ACCM
+ *  qualifications were supplied by Jude, with badges made from their logos.
  *  Dates are shown as the month issued. Only add an expiry date if the
  *  issuer actually lists one.
  *
@@ -21,7 +22,7 @@
  *  Keep `src` and `sourceUrl` next to each other, in that order.
  */
 
-export type CredentialType = "Certification" | "Applied skill" | "Course completion";
+export type CredentialType = "Qualification" | "Certification" | "Applied skill" | "Course completion";
 
 export type Credential = {
   /** Unique, URL-friendly id. */
@@ -31,12 +32,14 @@ export type Credential = {
   type: CredentialType;
   /** "YYYY-MM" (month issued) or "YYYY-MM-DD". Leave out if not verified. */
   issued?: string;
+  /** Qualification or credential code, shown in the detail view. */
+  credentialId?: string;
   /** Only if the issuer lists one. Same format as `issued`. */
   expires?: string;
-  /** The original credential page. Always kept. */
-  verifyUrl: string;
+  /** The original credential page. Leave out if there isn't one online. */
+  verifyUrl?: string;
   /** Where the credential is verified, shown on the link. */
-  verifiedOn: string;
+  verifiedOn?: string;
   /**
    * Leave out if the credential has no badge artwork.
    * `sourceUrl` is optional: leave it out for an image you've added to /public yourself.
@@ -141,8 +144,47 @@ const allCredentials: Credential[] = [
     order: 6,
   },
   {
+    id: "cert-iv-it-networking",
+    name: "Certificate IV in Information Technology (Networking)",
+    issuer: "ACCM",
+    type: "Qualification",
+    issued: "2022-06",
+    credentialId: "ICT40418",
+    image: {
+      src: "/certifications/cert-iv-it-networking.png",
+      alt: "ACCM logo with the label Certificate IV, IT (Networking)",
+    },
+    order: 7,
+  },
+  {
+    id: "cert-iii-idmt",
+    name: "Certificate III in Information, Digital Media and Technology",
+    issuer: "TAFE NSW",
+    type: "Qualification",
+    issued: "2020-09",
+    credentialId: "ICT30118",
+    image: {
+      src: "/certifications/cert-iii-idmt.png",
+      alt: "TAFE NSW logo with the label Certificate III, Information, Digital Media and Technology",
+    },
+    order: 8,
+  },
+  {
+    id: "cert-i-idmt",
+    name: "Certificate I in Information, Digital Media and Technology",
+    issuer: "TAFE NSW",
+    type: "Qualification",
+    issued: "2018-12",
+    credentialId: "ICT10115",
+    image: {
+      src: "/certifications/cert-i-idmt.png",
+      alt: "TAFE NSW logo with the label Certificate I, Information, Digital Media and Technology",
+    },
+    order: 9,
+  },
+  {
     id: "zscaler-data-security",
-    name: "Data Security (EDU-220) Test",
+    name: "Data Security (EDU-220)",
     issuer: "Zscaler Cyber Academy",
     type: "Course completion",
     issued: "2024-07-31",
@@ -154,7 +196,7 @@ const allCredentials: Credential[] = [
       src: "/certifications/zscaler-data-security.png",
       alt: "Zscaler logo with the label EDU-220 Data Security",
     },
-    order: 7,
+    order: 10,
   },
   {
     id: "mos-associate-2019",
@@ -170,7 +212,7 @@ const allCredentials: Credential[] = [
         "https://images.credly.com/images/7fab944f-0d46-4cda-afb6-39307e2432a9/linkedin_thumb_MOS_-_Office_Specialist_Associate-600x600.png",
       alt: "Microsoft Office Specialist: Associate badge",
     },
-    order: 8,
+    order: 11,
   },
   {
     id: "mos-excel-2019",
@@ -185,7 +227,7 @@ const allCredentials: Credential[] = [
       sourceUrl: "https://images.credly.com/images/9d2bcbe6-519f-4ed0-ad34-aca077421568/linkedin_thumb_MOS_Excel.png",
       alt: "Microsoft Office Specialist: Excel Associate badge",
     },
-    order: 9,
+    order: 12,
   },
   {
     id: "mos-powerpoint-2019",
@@ -201,7 +243,7 @@ const allCredentials: Credential[] = [
         "https://images.credly.com/images/ccfeac51-f472-404a-abf1-97ed89dda03b/linkedin_thumb_MOS_PowerPoint.png",
       alt: "Microsoft Office Specialist: PowerPoint Associate badge",
     },
-    order: 10,
+    order: 13,
   },
   {
     id: "mos-word-2019",
@@ -216,7 +258,7 @@ const allCredentials: Credential[] = [
       sourceUrl: "https://images.credly.com/images/b9912ce7-7c17-40bc-afbb-ca4251ea1416/linkedin_thumb_MOS_Word.png",
       alt: "Microsoft Office Specialist: Word Associate badge",
     },
-    order: 11,
+    order: 14,
   },
   {
     id: "coursera",
@@ -228,7 +270,7 @@ const allCredentials: Credential[] = [
     type: "Course completion",
     verifyUrl: "https://www.coursera.org/account/accomplishments/verify/1J7IIGYYYFVT",
     verifiedOn: "Coursera",
-    order: 12,
+    order: 15,
     hidden: true,
   },
 ];

@@ -10,6 +10,7 @@ import { cn } from "@/lib/cn";
 const MAX_TILT = 7;
 
 const typeDot: Record<CredentialType, string> = {
+  Qualification: "bg-building",
   Certification: "bg-accent",
   "Applied skill": "bg-live",
   "Course completion": "bg-ink-faint",
@@ -144,7 +145,7 @@ function CredentialCard({ credential, onOpen }: { credential: Credential; onOpen
           className="relative grid aspect-[4/3] w-full place-items-center rounded-2xl border border-line bg-canvas/70 [transform-style:preserve-3d]"
         >
           <span aria-hidden="true" className="dot-grid absolute inset-0 rounded-[inherit] opacity-60" />
-          <span className="relative block size-[62%] [transform:translateZ(34px)]">
+          <span className="relative block aspect-square h-[90%] [transform:translateZ(34px)]">
             <BadgeArt credential={credential} />
           </span>
         </button>
@@ -166,24 +167,26 @@ function CredentialCard({ credential, onOpen }: { credential: Credential; onOpen
           )}
         </div>
 
-        <div className="mt-auto pt-5">
-          <div className="flex items-center justify-between gap-3 border-t border-line pt-4">
-          <a
-            href={credential.verifyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group/link inline-flex items-center gap-1.5 rounded-md text-sm font-medium text-ink transition-colors hover:text-accent"
-          >
-            <Icon name="badge-check" size={15} className="text-ink-faint transition-colors group-hover/link:text-accent" />
-            Verify credential
-            <Icon name="arrow-up-right" size={13} className="transition-transform group-hover/link:-translate-y-px group-hover/link:translate-x-0.5" />
-            <span className="sr-only"> on {credential.verifiedOn} (opens in a new tab)</span>
-          </a>
-            <span aria-hidden="true" className="text-xs text-ink-faint">
-              {credential.verifiedOn}
-            </span>
+        {credential.verifyUrl && (
+          <div className="mt-auto pt-5">
+            <div className="flex items-center justify-between gap-3 border-t border-line pt-4">
+            <a
+              href={credential.verifyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/link inline-flex items-center gap-1.5 rounded-md text-sm font-medium text-ink transition-colors hover:text-accent"
+            >
+              <Icon name="badge-check" size={15} className="text-ink-faint transition-colors group-hover/link:text-accent" />
+              Verify credential
+              <Icon name="arrow-up-right" size={13} className="transition-transform group-hover/link:-translate-y-px group-hover/link:translate-x-0.5" />
+              <span className="sr-only"> on {credential.verifiedOn} (opens in a new tab)</span>
+            </a>
+              <span aria-hidden="true" className="text-xs text-ink-faint">
+                {credential.verifiedOn}
+              </span>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </article>
   );
@@ -243,7 +246,7 @@ export function CredentialGallery({ credentials }: { credentials: Credential[] }
 
             <div className="relative mx-auto mt-2 grid aspect-square w-full max-w-[240px] place-items-center rounded-2xl border border-line bg-canvas/70">
               <span aria-hidden="true" className="dot-grid absolute inset-0 rounded-[inherit] opacity-60" />
-              <span className="relative block size-[78%]">
+              <span className="relative block size-[92%]">
                 <BadgeArt credential={active} eager />
               </span>
             </div>
@@ -256,21 +259,24 @@ export function CredentialGallery({ credentials }: { credentials: Credential[] }
               <Row label="Issued by">{active.issuer}</Row>
               <Row label="Type">{active.type}</Row>
               {active.issued && <Row label="Issued">{formatCredentialDate(active.issued)}</Row>}
+              {active.credentialId && <Row label="Credential ID">{active.credentialId}</Row>}
               {active.expires && <Row label="Expires">{formatCredentialDate(active.expires)}</Row>}
-              <Row label="Verified on">{active.verifiedOn}</Row>
+              {active.verifiedOn && <Row label="Verified on">{active.verifiedOn}</Row>}
             </dl>
 
-            <a
-              href={active.verifyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-6 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-ink px-5 text-[14.5px] font-medium text-canvas transition-opacity hover:opacity-90"
-            >
-              <Icon name="badge-check" size={16} />
-              Verify credential
-              <Icon name="arrow-up-right" size={15} className="transition-transform group-hover:-translate-y-px group-hover:translate-x-0.5" />
-              <span className="sr-only"> on {active.verifiedOn} (opens in a new tab)</span>
-            </a>
+            {active.verifyUrl && (
+              <a
+                href={active.verifyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mt-6 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-ink px-5 text-[14.5px] font-medium text-canvas transition-opacity hover:opacity-90"
+              >
+                <Icon name="badge-check" size={16} />
+                Verify credential
+                <Icon name="arrow-up-right" size={15} className="transition-transform group-hover:-translate-y-px group-hover:translate-x-0.5" />
+                <span className="sr-only"> on {active.verifiedOn} (opens in a new tab)</span>
+              </a>
+            )}
           </div>
         )}
       </dialog>
