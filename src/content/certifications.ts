@@ -14,10 +14,11 @@
  *  fields, and set `order` (lower numbers appear first).
  *
  *  BADGE IMAGES
- *  `src` is where the image lives on your site (inside /public).
+ *  `src` is where the image lives on your site (inside /public/badges).
  *  `sourceUrl` is the official image on the issuer's site.
  *  Before every build, scripts/fetch-badges.mjs downloads each `sourceUrl`
- *  into `src`, so the site serves its own copy. If that download ever
+ *  into `src` (trimmed to the same size as the custom badges), so the site
+ *  serves its own copy. If that download ever
  *  fails, the page falls back to `sourceUrl`, so a badge never goes blank.
  *  Keep `src` and `sourceUrl` next to each other, in that order.
  */
@@ -62,7 +63,7 @@ const allCredentials: Credential[] = [
     verifiedOn: "Microsoft Learn",
     // Custom badge made from the Microsoft logo (supplied by Jude), so it has no sourceUrl.
     image: {
-      src: "/certifications/applied-skills-entra.png",
+      src: "/badges/applied-skills-entra.png",
       alt: "Microsoft logo with the label MAS: Identity and Access Management using Microsoft Entra",
     },
     order: 1,
@@ -76,7 +77,7 @@ const allCredentials: Credential[] = [
     verifyUrl: "https://www.credly.com/badges/15abf827-9551-4b90-a3d5-9431facab758",
     verifiedOn: "Credly",
     image: {
-      src: "/certifications/azure-fundamentals.png",
+      src: "/badges/azure-fundamentals.png",
       sourceUrl: "https://images.credly.com/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png",
       alt: "Microsoft Certified: Azure Fundamentals badge",
     },
@@ -91,7 +92,7 @@ const allCredentials: Credential[] = [
     verifyUrl: "https://www.credly.com/badges/80476aa2-15cf-415f-943a-b9a0119edfea",
     verifiedOn: "Credly",
     image: {
-      src: "/certifications/mta-security-fundamentals.png",
+      src: "/badges/mta-security-fundamentals.png",
       sourceUrl: "https://images.credly.com/images/84dbce61-35f9-4c8b-8305-1c51daaf9155/image.png",
       alt: "MTA: Security Fundamentals badge",
     },
@@ -106,7 +107,7 @@ const allCredentials: Credential[] = [
     verifyUrl: "https://www.credly.com/badges/3fd70c97-ec6b-478e-8366-a701a7d5b828",
     verifiedOn: "Credly",
     image: {
-      src: "/certifications/mta-windows-server-administration.png",
+      src: "/badges/mta-windows-server-administration.png",
       sourceUrl: "https://images.credly.com/images/89ec87af-6713-4de0-aa12-81f4037cbf09/image.png",
       alt: "MTA: Windows Server Administration Fundamentals badge",
     },
@@ -121,7 +122,7 @@ const allCredentials: Credential[] = [
     verifyUrl: "https://www.credly.com/badges/79386572-f084-44f2-a649-5d6ad39403e0",
     verifiedOn: "Credly",
     image: {
-      src: "/certifications/mta-networking-fundamentals.png",
+      src: "/badges/mta-networking-fundamentals.png",
       sourceUrl: "https://images.credly.com/images/550245bc-8e3c-4243-90bb-d518764b7f5d/image.png",
       alt: "MTA: Networking Fundamentals badge",
     },
@@ -136,7 +137,7 @@ const allCredentials: Credential[] = [
     verifyUrl: "https://www.credly.com/badges/e5ddf257-0855-4eeb-87a3-733a4cd0a321",
     verifiedOn: "Credly",
     image: {
-      src: "/certifications/mta-windows-os-fundamentals.png",
+      src: "/badges/mta-windows-os-fundamentals.png",
       sourceUrl:
         "https://images.credly.com/images/e053125b-ff30-4a16-90cc-8804a306c4b6/MTA-Windows_Operating_System_Fundamentals-600x600.png",
       alt: "MTA: Windows Operating System Fundamentals badge",
@@ -151,7 +152,7 @@ const allCredentials: Credential[] = [
     issued: "2022-06",
     credentialId: "ICT40418",
     image: {
-      src: "/certifications/cert-iv-it-networking.png",
+      src: "/badges/cert-iv-it-networking.png",
       alt: "ACCM logo with the label Certificate IV, IT (Networking)",
     },
     order: 7,
@@ -164,7 +165,7 @@ const allCredentials: Credential[] = [
     issued: "2020-09",
     credentialId: "ICT30118",
     image: {
-      src: "/certifications/cert-iii-idmt.png",
+      src: "/badges/cert-iii-idmt.png",
       alt: "TAFE NSW logo with the label Certificate III, Information, Digital Media and Technology",
     },
     order: 8,
@@ -177,7 +178,7 @@ const allCredentials: Credential[] = [
     issued: "2018-12",
     credentialId: "ICT10115",
     image: {
-      src: "/certifications/cert-i-idmt.png",
+      src: "/badges/cert-i-idmt.png",
       alt: "TAFE NSW logo with the label Certificate I, Information, Digital Media and Technology",
     },
     order: 9,
@@ -193,7 +194,7 @@ const allCredentials: Credential[] = [
     // Zscaler doesn't issue badge artwork for this course. This image was made from the Zscaler logo
     // (supplied by Jude) and labelled EDU-220, so it has no official sourceUrl.
     image: {
-      src: "/certifications/zscaler-data-security.png",
+      src: "/badges/zscaler-data-security.png",
       alt: "Zscaler logo with the label EDU-220 Data Security",
     },
     order: 10,
@@ -207,7 +208,7 @@ const allCredentials: Credential[] = [
     verifyUrl: "https://www.credly.com/badges/67de0c7e-ab95-4868-8c38-c35a11c7f1b4",
     verifiedOn: "Credly",
     image: {
-      src: "/certifications/mos-associate-2019.png",
+      src: "/badges/mos-associate-2019.png",
       sourceUrl:
         "https://images.credly.com/images/7fab944f-0d46-4cda-afb6-39307e2432a9/MOS_-_Office_Specialist_Associate-600x600.png",
       alt: "Microsoft Office Specialist: Associate badge",
@@ -223,7 +224,7 @@ const allCredentials: Credential[] = [
     verifyUrl: "https://www.credly.com/badges/d2b93869-7e6a-44df-8b71-d27ddb0f161c",
     verifiedOn: "Credly",
     image: {
-      src: "/certifications/mos-excel-2019.png",
+      src: "/badges/mos-excel-2019.png",
       sourceUrl: "https://images.credly.com/images/9d2bcbe6-519f-4ed0-ad34-aca077421568/MOS_Excel.png",
       alt: "Microsoft Office Specialist: Excel Associate badge",
     },
@@ -238,7 +239,7 @@ const allCredentials: Credential[] = [
     verifyUrl: "https://www.credly.com/badges/86fa05ad-2030-4985-aade-30b51304f43a",
     verifiedOn: "Credly",
     image: {
-      src: "/certifications/mos-powerpoint-2019.png",
+      src: "/badges/mos-powerpoint-2019.png",
       sourceUrl:
         "https://images.credly.com/images/ccfeac51-f472-404a-abf1-97ed89dda03b/MOS_PowerPoint.png",
       alt: "Microsoft Office Specialist: PowerPoint Associate badge",
@@ -254,7 +255,7 @@ const allCredentials: Credential[] = [
     verifyUrl: "https://www.credly.com/badges/819a3d90-e42a-4341-8db8-5bbcc79e09f3",
     verifiedOn: "Credly",
     image: {
-      src: "/certifications/mos-word-2019.png",
+      src: "/badges/mos-word-2019.png",
       sourceUrl: "https://images.credly.com/images/b9912ce7-7c17-40bc-afbb-ca4251ea1416/MOS_Word.png",
       alt: "Microsoft Office Specialist: Word Associate badge",
     },
@@ -265,10 +266,15 @@ const allCredentials: Credential[] = [
     name: "Technical Support Fundamentals",
     issuer: "Google",
     type: "Course completion",
-    // Coursera blocks automated checks; name and issuer supplied by Jude.
-    // TODO (your input): month completed, e.g. issued: "2021-05".
+    // Coursera blocks automated checks; details supplied by Jude.
+    issued: "2026-04",
     verifyUrl: "https://www.coursera.org/account/accomplishments/verify/1J7IIGYYYFVT",
     verifiedOn: "Coursera",
+    // Custom badge made from the Google logo (supplied by Jude), so it has no sourceUrl.
+    image: {
+      src: "/badges/google-technical-support-fundamentals.png",
+      alt: "Google logo with the label Technical Support Fundamentals",
+    },
     order: 11,
   },
 ];
