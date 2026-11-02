@@ -60,10 +60,10 @@ const allCredentials: Credential[] = [
     issued: "2025-08",
     verifyUrl: "https://learn.microsoft.com/en-au/users/judemendez-9422/credentials/751e71fee3ce8c06",
     verifiedOn: "Microsoft Learn",
+    // Custom badge made from the Microsoft logo (supplied by Jude), so it has no sourceUrl.
     image: {
       src: "/certifications/applied-skills-entra.png",
-      sourceUrl: "https://learn.microsoft.com/en-us/media/learn/credential/badges/applied-skill.png",
-      alt: "Microsoft Applied Skills badge",
+      alt: "Microsoft logo with the label MAS: Identity and Access Management using Microsoft Entra",
     },
     order: 1,
   },
@@ -77,7 +77,7 @@ const allCredentials: Credential[] = [
     verifiedOn: "Credly",
     image: {
       src: "/certifications/azure-fundamentals.png",
-      sourceUrl: "https://images.credly.com/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/linkedin_thumb_image.png",
+      sourceUrl: "https://images.credly.com/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png",
       alt: "Microsoft Certified: Azure Fundamentals badge",
     },
     order: 2,
@@ -92,7 +92,7 @@ const allCredentials: Credential[] = [
     verifiedOn: "Credly",
     image: {
       src: "/certifications/mta-security-fundamentals.png",
-      sourceUrl: "https://images.credly.com/images/84dbce61-35f9-4c8b-8305-1c51daaf9155/linkedin_thumb_image.png",
+      sourceUrl: "https://images.credly.com/images/84dbce61-35f9-4c8b-8305-1c51daaf9155/image.png",
       alt: "MTA: Security Fundamentals badge",
     },
     order: 3,
@@ -107,7 +107,7 @@ const allCredentials: Credential[] = [
     verifiedOn: "Credly",
     image: {
       src: "/certifications/mta-windows-server-administration.png",
-      sourceUrl: "https://images.credly.com/images/89ec87af-6713-4de0-aa12-81f4037cbf09/linkedin_thumb_image.png",
+      sourceUrl: "https://images.credly.com/images/89ec87af-6713-4de0-aa12-81f4037cbf09/image.png",
       alt: "MTA: Windows Server Administration Fundamentals badge",
     },
     order: 4,
@@ -122,7 +122,7 @@ const allCredentials: Credential[] = [
     verifiedOn: "Credly",
     image: {
       src: "/certifications/mta-networking-fundamentals.png",
-      sourceUrl: "https://images.credly.com/images/550245bc-8e3c-4243-90bb-d518764b7f5d/linkedin_thumb_image.png",
+      sourceUrl: "https://images.credly.com/images/550245bc-8e3c-4243-90bb-d518764b7f5d/image.png",
       alt: "MTA: Networking Fundamentals badge",
     },
     order: 5,
@@ -138,7 +138,7 @@ const allCredentials: Credential[] = [
     image: {
       src: "/certifications/mta-windows-os-fundamentals.png",
       sourceUrl:
-        "https://images.credly.com/images/e053125b-ff30-4a16-90cc-8804a306c4b6/linkedin_thumb_MTA-Windows_Operating_System_Fundamentals-600x600.png",
+        "https://images.credly.com/images/e053125b-ff30-4a16-90cc-8804a306c4b6/MTA-Windows_Operating_System_Fundamentals-600x600.png",
       alt: "MTA: Windows Operating System Fundamentals badge",
     },
     order: 6,
@@ -209,10 +209,10 @@ const allCredentials: Credential[] = [
     image: {
       src: "/certifications/mos-associate-2019.png",
       sourceUrl:
-        "https://images.credly.com/images/7fab944f-0d46-4cda-afb6-39307e2432a9/linkedin_thumb_MOS_-_Office_Specialist_Associate-600x600.png",
+        "https://images.credly.com/images/7fab944f-0d46-4cda-afb6-39307e2432a9/MOS_-_Office_Specialist_Associate-600x600.png",
       alt: "Microsoft Office Specialist: Associate badge",
     },
-    order: 11,
+    order: 12,
   },
   {
     id: "mos-excel-2019",
@@ -224,10 +224,10 @@ const allCredentials: Credential[] = [
     verifiedOn: "Credly",
     image: {
       src: "/certifications/mos-excel-2019.png",
-      sourceUrl: "https://images.credly.com/images/9d2bcbe6-519f-4ed0-ad34-aca077421568/linkedin_thumb_MOS_Excel.png",
+      sourceUrl: "https://images.credly.com/images/9d2bcbe6-519f-4ed0-ad34-aca077421568/MOS_Excel.png",
       alt: "Microsoft Office Specialist: Excel Associate badge",
     },
-    order: 12,
+    order: 13,
   },
   {
     id: "mos-powerpoint-2019",
@@ -240,10 +240,10 @@ const allCredentials: Credential[] = [
     image: {
       src: "/certifications/mos-powerpoint-2019.png",
       sourceUrl:
-        "https://images.credly.com/images/ccfeac51-f472-404a-abf1-97ed89dda03b/linkedin_thumb_MOS_PowerPoint.png",
+        "https://images.credly.com/images/ccfeac51-f472-404a-abf1-97ed89dda03b/MOS_PowerPoint.png",
       alt: "Microsoft Office Specialist: PowerPoint Associate badge",
     },
-    order: 13,
+    order: 14,
   },
   {
     id: "mos-word-2019",
@@ -255,23 +255,21 @@ const allCredentials: Credential[] = [
     verifiedOn: "Credly",
     image: {
       src: "/certifications/mos-word-2019.png",
-      sourceUrl: "https://images.credly.com/images/b9912ce7-7c17-40bc-afbb-ca4251ea1416/linkedin_thumb_MOS_Word.png",
+      sourceUrl: "https://images.credly.com/images/b9912ce7-7c17-40bc-afbb-ca4251ea1416/MOS_Word.png",
       alt: "Microsoft Office Specialist: Word Associate badge",
     },
-    order: 14,
+    order: 15,
   },
   {
-    id: "coursera",
-    // TODO (your input): Coursera blocks automated checks, so these details couldn't be verified.
-    // Open the link below, then fill in `name`, `issuer` (the university or company that offers the
-    // course), `type` and `issued`, and delete the `hidden: true` line to show it on the site.
-    name: "Coursera credential",
-    issuer: "Coursera",
+    id: "coursera-technical-support-fundamentals",
+    name: "Technical Support Fundamentals",
+    issuer: "Google",
     type: "Course completion",
+    // Coursera blocks automated checks; name and issuer supplied by Jude.
+    // TODO (your input): month completed, e.g. issued: "2021-05".
     verifyUrl: "https://www.coursera.org/account/accomplishments/verify/1J7IIGYYYFVT",
     verifiedOn: "Coursera",
-    order: 15,
-    hidden: true,
+    order: 11,
   },
 ];
 

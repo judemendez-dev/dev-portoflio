@@ -43,9 +43,9 @@ function BadgeArt({ credential, className, eager }: { credential: Credential; cl
   if (!image || failed) {
     // No badge artwork is issued for this credential: show a plain issuer tile, never a stand-in badge.
     return (
-      <span className={cn("flex flex-col items-center justify-center gap-3 text-center", className)}>
-        <span className="grid size-16 place-items-center rounded-2xl border border-line-strong bg-surface text-ink-muted">
-          <Icon name="award" size={28} strokeWidth={1.5} />
+      <span className={cn("flex h-full flex-col items-center justify-center gap-2.5 text-center", className)}>
+        <span className="grid size-14 place-items-center rounded-2xl border border-line-strong bg-surface text-ink-muted">
+          <Icon name="award" size={24} strokeWidth={1.5} />
         </span>
         <span className="px-2 text-sm font-medium leading-snug text-ink">{credential.issuer}</span>
         <span className="text-xs text-ink-faint">{image ? "Badge unavailable" : "Certificate of completion"}</span>

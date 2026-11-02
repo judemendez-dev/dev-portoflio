@@ -40,6 +40,10 @@ for (const { file, url } of pairs) {
     await mkdir(path.dirname(file), { recursive: true });
     await writeFile(file, buffer);
     downloaded++;
+    // PNG files store their width and height at bytes 16–23; logged so sizes can be checked in the build log.
+    const isPng = buffer.length > 24 && buffer.toString("ascii", 1, 4) === "PNG";
+    const size = isPng ? `${buffer.readUInt32BE(16)}x${buffer.readUInt32BE(20)}` : `${buffer.length} bytes`;
+    console.log(`[badges] ${path.basename(file)} ${size}`);
   } catch (error) {
     failed++;
     console.warn(`[badges] Couldn't download ${url} (${error.message}). The page will load it from the issuer instead.`);
