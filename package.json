@@ -4,7 +4,9 @@
   "private": true,
   "description": "Personal website of Jude Mendez — judemendez.dev",
   "scripts": {
+    "predev": "node scripts/fetch-badges.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/fetch-badges.mjs",
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit"

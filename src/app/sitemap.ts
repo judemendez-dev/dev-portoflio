@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 /** Generated at build time: every page plus one entry per project. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const pages = ["", "/projects", "/about", "/experience", "/contact"].map((path) => ({
+  const pages = ["", "/projects", "/about", "/experience", "/certifications", "/contact"].map((path) => ({
     url: `${site.url}${path}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

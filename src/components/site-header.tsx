@@ -49,7 +49,7 @@ export function SiteHeader() {
 
         <DesktopNav pathname={pathname} />
 
-        <div className="ml-auto flex items-center gap-1 md:ml-0">
+        <div className="ml-auto flex items-center gap-1 lg:ml-0">
           <button
             type="button"
             onClick={openCommandPalette}
@@ -57,7 +57,7 @@ export function SiteHeader() {
             aria-label="Open command menu"
           >
             <Icon name="search" size={14} />
-            <span className="md:max-lg:sr-only">Search</span>
+            <span className="lg:max-xl:sr-only">Search</span>
             <kbd className="whitespace-nowrap rounded-full bg-raised px-2 py-0.5 font-mono text-[11px] text-ink-faint">
               {isMac ? "⌘K" : "Ctrl K"}
             </kbd>
@@ -102,7 +102,7 @@ function DesktopNav({ pathname }: { pathname: string }) {
   }, [moveToActive]);
 
   return (
-    <nav aria-label="Main" className="ml-auto hidden md:block">
+    <nav aria-label="Main" className="ml-auto hidden lg:block">
       <div ref={navRef} className="relative flex items-center" onMouseLeave={moveToActive}>
         <span
           aria-hidden="true"
@@ -161,7 +161,7 @@ function MobileMenu({ pathname }: { pathname: string }) {
         aria-label="Open menu"
         aria-haspopup="dialog"
         aria-expanded={open}
-        className="grid size-9 place-items-center rounded-full text-ink-muted transition-colors hover:bg-raised hover:text-ink md:hidden"
+        className="grid size-9 place-items-center rounded-full text-ink-muted transition-colors hover:bg-raised hover:text-ink lg:hidden"
       >
         <Icon name="menu" size={18} />
       </button>

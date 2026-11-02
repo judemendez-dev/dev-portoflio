@@ -18,6 +18,7 @@ export const socialImages = {
   projects: { url: "/og/projects.png", width: 1200, height: 630, alt: "Projects by Jude Mendez" },
   about: { url: "/og/about.png", width: 1200, height: 630, alt: "About Jude Mendez" },
   experience: { url: "/og/experience.png", width: 1200, height: 630, alt: "Jude Mendez's professional experience" },
+  certifications: { url: "/og/certifications.png", width: 1200, height: 630, alt: "Certifications & Credentials of Jude Mendez" },
   contact: { url: "/og/contact.png", width: 1200, height: 630, alt: "Contact Jude Mendez" },
 } satisfies Record<string, SocialImage>;
 
